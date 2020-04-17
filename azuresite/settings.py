@@ -76,15 +76,19 @@ WSGI_APPLICATION = 'azuresite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'pollsdb1',
-        'USER': 'postgres',
-        'PASSWORD': '1',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'pollsdb',
+        'USER': 'mysecretname@quangdwemosqlserver',
+        'PASSWORD': '123456a@',
+        'HOST': 'quangdwemosqlserver.database.windows.net',
+        'PORT': '',
+        'OPTIONS': {
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
     }
 }
 
+DATABASE_CONNECTION_POOLING = False
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
